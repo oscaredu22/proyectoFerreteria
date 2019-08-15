@@ -1,0 +1,27 @@
+<div class="login">
+  <h1>LOG IN</h1>
+
+  <form (ngSubmit)="envio();" #envioForm="ngForm" role="form" method="POST" id="mi-formulario" name="formulario1">
+    <div class="form-group">
+      <label class="control-label" for="usuario">NOMBRE:</label>
+      <input class="form-control" type="text" name="usuario" #nombreUsuario placeholder="Ingresa tu nombre" 
+      [(ngModel)]="enviarDatos.nombre" required>  
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="apellido">APELLIDO:</label>
+      <input class="form-control" type="text" name="apellido" #apellido placeholder="Ingresa tu apellido" 
+      [(ngModel)]="enviarDatos.apellido" required>  
+    </div>  
+    <div class="form-group">
+      <label class="control-label" for="contraseña">CONTRASEÑA:</label>
+      <input type="password" name="contraseña" id="password" #contras placeholder="Ingresa tu contraseña" 
+      [(ngModel)]="enviarDatos.password" required>
+    </div>
+
+    <button type="submit" id="ingresar" class="btn btn-primary" (click)="envio();" [disabled]="!envioForm.form.valid">Ingresar</button>
+    <button type="submit" class="btn btn-primary" (click)="abrirModalRegistro();">Regístrate</button>
+  </form>
+</div>
+
+<!-- [(ngModel)]="enviarDatos.nombreUsuario" -->
+<!-- [(ngModel)]="enviarDatos.contras" -->
